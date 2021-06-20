@@ -122,7 +122,7 @@ class LoginForm extends Component {
           />
         </label>
         <Button
-          type="button"
+          type="submit"
           disabled={buttonDisable}
           onClick={this.handleSubmit}
         >

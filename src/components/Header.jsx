@@ -1,6 +1,37 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import logoTrybe from "../trybe.jpeg";
+
+const HeaderStyled = styled.header`
+  align-items: center;
+  background: #ecf0f1;
+  box-sizing: border-box;
+  color: #2c3e50;
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+  padding: 1rem;
+  width: 100%;
+  span {
+    margin-right: 1rem;
+  }
+`;
+
+const Title = styled.h2`
+  color: #2c3e50;
+`;
+
+const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  img {
+    width: 40px;
+    margin-right: 0.5rem;
+    border-radius: 5px;
+  }
+`;
 
 class Header extends Component {
   constructor() {
@@ -10,26 +41,39 @@ class Header extends Component {
 
   totalExpenses() {
     const { expenses } = this.props;
-    return expenses.reduce((accumulator, currentValue) => (
-      accumulator + Number(currentValue.value
-        * currentValue.exchangeRates[currentValue.currency].ask)
-    ), 0).toFixed(2);
+    return expenses
+      .reduce(
+        (accumulator, currentValue) =>
+          accumulator +
+          Number(
+            currentValue.value *
+              currentValue.exchangeRates[currentValue.currency].ask
+          ),
+        0
+      )
+      .toFixed(2);
   }
 
   render() {
     const { email } = this.props;
     return (
-      <header>
-        <span data-testid="email-field">
-          Email:
-          {email}
-        </span>
-        <span>Despesa Total:</span>
-        <span data-testid="total-field">
-          {this.totalExpenses()}
-        </span>
-        <span data-testid="header-currency-field">BRL</span>
-      </header>
+      <HeaderStyled>
+        <LogoContainer>
+          <img src={logoTrybe} alt="logo da trybe" />
+          <Title>TRYBE WALLET</Title>
+        </LogoContainer>
+        <div>
+          <span data-testid="email-field">
+            Email:
+            {email}
+          </span>
+          <span data-testid="total-field">
+            Despesa Total: R$
+            {this.totalExpenses()}
+            BRL
+          </span>
+        </div>
+      </HeaderStyled>
     );
   }
 }
