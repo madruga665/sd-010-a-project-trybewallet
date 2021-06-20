@@ -1,16 +1,55 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import './style/LoginForm.css';
-import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom';
-import { userLogin } from '../actions';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { Redirect } from "react-router-dom";
+import { userLogin } from "../actions";
+import styled from "styled-components";
+
+const Button = styled.button`
+  color: #2c3e50 ;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid #2ecc71;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 300ms;
+  :hover {
+  color: white;
+  background: #2ecc71;
+  }
+`;
+
+const Form = styled.form`
+  align-items: center;
+  box-sizing: border-box;
+  border: 1px solid #2ecc71;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 2rem;
+`;
+const Input = styled.input`
+  :focus {
+    border: none;
+    outline: 0;
+  }
+  border: none;
+  border-bottom: 1px solid #2ecc71;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+`;
+
+const Title = styled.h2`
+  color:#2c3e50 ;
+`
 
 class LoginForm extends Component {
   constructor() {
     super();
     this.state = {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
       buttonDisable: true,
       redirect: false,
     };
@@ -34,11 +73,14 @@ class LoginForm extends Component {
   }
 
   handleChange(event) {
-    const { target: { value, name } } = event;
+    const {
+      target: { value, name },
+    } = event;
     this.setState({ [name]: value });
-    const verifications = (this.emailVerification() && this.passwordVerification()
-      ? this.setState({ buttonDisable: false })
-      : this.setState({ buttonDisable: true }));
+    const verifications =
+      this.emailVerification() && this.passwordVerification()
+        ? this.setState({ buttonDisable: false })
+        : this.setState({ buttonDisable: true });
     return verifications;
   }
 
@@ -55,33 +97,38 @@ class LoginForm extends Component {
       return <Redirect to="/carteira" />;
     }
     return (
-      <form className="login-form-container">
+      <Form>
+        <Title>TRYBE WALLET</Title>
         <label htmlFor="email">
-          <input
+          <Input
             type="email"
             id="email"
             name="email"
-            value={ email }
-            onChange={ this.handleChange }
+            value={email}
+            onChange={this.handleChange}
             data-testid="email-input"
             placeholder="Digite seu email"
           />
         </label>
         <label htmlFor="password">
-          <input
+          <Input
             type="password"
             id="password"
             name="password"
-            value={ password }
-            onChange={ this.handleChange }
+            value={password}
+            onChange={this.handleChange}
             data-testid="password-input"
             placeholder="Digite sua senha"
           />
         </label>
-        <button type="button" disabled={ buttonDisable } onClick={ this.handleSubmit }>
+        <Button
+          type="button"
+          disabled={buttonDisable}
+          onClick={this.handleSubmit}
+        >
           Entrar
-        </button>
-      </form>
+        </Button>
+      </Form>
     );
   }
 }
@@ -91,9 +138,7 @@ LoginForm.propTypes = {
 }.isRequired;
 
 const mapDispatchToProps = (dispatch) => ({
-  getEmail: (email) => dispatch(
-    userLogin(email),
-  ),
+  getEmail: (email) => dispatch(userLogin(email)),
 });
 
 export default connect(null, mapDispatchToProps)(LoginForm);
