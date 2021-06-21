@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import logoTrybe from "../trybe.jpeg";
+import { Link } from "react-router-dom";
 
 const HeaderStyled = styled.header`
   align-items: center;
@@ -14,6 +15,9 @@ const HeaderStyled = styled.header`
   height: 4rem;
   padding: 1rem;
   width: 100%;
+  a {
+    text-decoration: none;
+  }
   span {
     margin-right: 1rem;
   }
@@ -26,6 +30,7 @@ const Title = styled.h2`
 const LogoContainer = styled.div`
   display: flex;
   align-items: center;
+  cursor: pointer;
   img {
     width: 40px;
     margin-right: 0.5rem;
@@ -58,18 +63,20 @@ class Header extends Component {
     const { email } = this.props;
     return (
       <HeaderStyled>
+        <Link to="/">
         <LogoContainer>
           <img src={logoTrybe} alt="logo da trybe" />
           <Title>TRYBE WALLET</Title>
         </LogoContainer>
+        </Link>
         <div>
           <span data-testid="email-field">
-            Email:
+            <strong>Email: </strong>
             {email}
           </span>
           <span data-testid="total-field">
-            Despesa Total: R$
-            {this.totalExpenses()}
+            <strong>Despesa Total: </strong>
+            R$ {this.totalExpenses()}
             BRL
           </span>
         </div>

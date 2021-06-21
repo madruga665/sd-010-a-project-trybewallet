@@ -1,13 +1,20 @@
 import React from 'react';
+import styled from 'styled-components';
 import LoginForm from '../components/LoginForm';
-import './style/Login.css';
+
+const Main = styled.main`
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+`
 
 class Login extends React.Component {
   render() {
     return (
-      <main className="login-page">
+      <Main>
         <LoginForm />
-      </main>
+      </Main>
     );
   }
 }

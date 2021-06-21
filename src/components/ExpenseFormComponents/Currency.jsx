@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchCurrency } from '../../actions';
+import styled from 'styled-components';
+
+const Select = styled.select`
+  border-radius: 5px;
+  border: none;
+  padding: 0.2rem;
+  margin-left: 0.5rem;
+`;
 
 class Currency extends Component {
   componentDidMount() {
@@ -14,7 +22,7 @@ class Currency extends Component {
     return (
       <label htmlFor="currency">
         Moeda:
-        <select
+        <Select
           id="currency"
           name="currency"
           value={ value }
@@ -23,7 +31,7 @@ class Currency extends Component {
           {currencies.map((currency) => (
             <option key={ currency }>{currency}</option>
           ))}
-        </select>
+        </Select>
       </label>
     );
   }

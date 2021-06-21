@@ -34,6 +34,10 @@ const Button = styled.button`
   border-radius: 3px;
   cursor: pointer;
   transition: 300ms;
+  :hover {
+    background: #26aa5d;
+    border: 2px solid #26aa5d;
+  }
 `;
 class ExpenseForm extends Component {
   constructor() {
