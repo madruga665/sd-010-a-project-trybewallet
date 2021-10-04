@@ -1,6 +1,6 @@
 {
-  "name": "sd-0x-project-trybewallet",
-  "homepage": "https://madruga665.github.io/sd-010-a-project-trybewallet/",
+  "name": "trybe-projeto-trybewallet",
+  "homepage": "https://madruga665.github.io/trybe-projeto-trybewallet/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
