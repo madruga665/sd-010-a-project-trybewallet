@@ -1,17 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import ExpenseTableRow from "./ExpenseTableRow";
-import styled from "styled-components";
+import ExpenseTableRow from "../ExpenseTableRow";
+import { Table } from "./style";
 
-const Table = styled.table`
-  box-sizing: border-box;
-  background: #34495e;
-  border: none;
-  color: #ecf0f1;
-  text-align: center;
-  width: 100%;
-`;
 class ExpenseTable extends Component {
   render() {
     const { expenses } = this.props;
@@ -40,7 +32,7 @@ class ExpenseTable extends Component {
 
 ExpenseTable.propTypes = {
   expenses: PropTypes.array,
-}.isRequired;
+};
 
 const mapStateToProps = (state) => ({
   expenses: state.wallet.expenses,
