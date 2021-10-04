@@ -1,15 +1,32 @@
 <img src="https://ik.imagekit.io/lltmkbsdtye/CAPA_LINKEDIN_PERFIL_PESSOAL03__1__7hO4TKpg5.png">
 
-# 🚀️ Projeto realizado no final do bloco 17
+# 🚀️ Projeto realizado no final do bloco 17 do curso.
 
-## 💚️ Resultado 💚️
+[Link para acessar a aplicação](https://madruga665.github.io/trybe-projeto-trybewallet/)
 
-<img src="./resultado-do-projeto.png">
+*Nota: para acessar a aplicação digite um email valido ex: meuemail@gmail.com e uma senha qualquer com mais de 6 digitos.*
 
 ---
 
-# Habilidades
-Neste projeto, verificamos se voce é capaz de:
+## 🏃‍♀️ Como rodar o projeto na sua maquina?
+
+### 1. Faça um clone do projeto:
+```
+git clone https://github.com/madruga665/trybe-projeto-trybewallet.git
+```
+
+### 2. Instale as dependências:
+
+```
+npm install
+```
+
+### 3. Rode a aplicação utilizando o comando:
+
+```
+npm start
+```
+# Habilidades Desenvolvidas:
 
   * Criar um store Redux em aplicações React
 
