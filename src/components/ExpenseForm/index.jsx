@@ -8,6 +8,7 @@ import PaymentMethods from '../ExpenseFormComponents/PaymentMethods';
 import Tag from '../ExpenseFormComponents/Tag';
 import { addExpense } from '../../actions';
 import { Button, Form } from './style';
+import { getAllCurrency } from '../../service/awesomeapi'
 
 class ExpenseForm extends Component {
   constructor() {
@@ -27,8 +28,7 @@ class ExpenseForm extends Component {
     event.preventDefault();
     const { addNewExpense, expenses } = this.props;
     const { value, description, currency, method, tag } = this.state;
-    const response = await fetch('https://economia.awesomeapi.com.br/json/all');
-    const data = await response.json();
+    const data = await getAllCurrency();
     addNewExpense({
       id: expenses.length,
       value,
