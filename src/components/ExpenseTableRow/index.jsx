@@ -1,25 +1,10 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { removeExpense } from "../actions";
+import { connect } from "react-redux";
+import { removeExpense } from "../../actions";
 import { BsTrash } from "react-icons/bs";
 import { FaEdit } from "react-icons/fa";
-import styled from "styled-components";
-
-const Button = styled.button`
-  background: ${props => props.trash ? "#e74c3c ": "#f1c40f"};
-  margin-right: 0.5rem;
-  padding: 0.5rem;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 300ms;
-  width: 3rem;
-  :hover {
-    background: ${props => props.trash ? "#c0392b ": "#f39c12"};
-  }
-`;
+import { Button } from "./style";
 
 class ExpenseTableRow extends Component {
   render() {
@@ -58,7 +43,7 @@ class ExpenseTableRow extends Component {
 
 ExpenseTableRow.propTypes = {
   expense: PropTypes.object,
-}.isRequired;
+};
 
 const mapDispatchToProps = (dispatch) => ({
   removeCurrentExpense: (expense) => dispatch(removeExpense(expense)),
