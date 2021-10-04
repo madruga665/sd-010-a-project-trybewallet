@@ -1,44 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import Value from './ExpenseFormComponents/Value';
-import Description from './ExpenseFormComponents/Description';
-import Currency from './ExpenseFormComponents/Currency';
-import PaymentMethods from './ExpenseFormComponents/PaymentMethods';
-import Tag from './ExpenseFormComponents/Tag';
-import { addExpense } from '../actions';
-import styled from 'styled-components';
+import propTypes from 'prop-types';
+import Value from '../ExpenseFormComponents/Value';
+import Description from '../ExpenseFormComponents/Description';
+import Currency from '../ExpenseFormComponents/Currency';
+import PaymentMethods from '../ExpenseFormComponents/PaymentMethods';
+import Tag from '../ExpenseFormComponents/Tag';
+import { addExpense } from '../../actions';
+import { Button, Form } from './style';
 
-const Form = styled.form`
-  align-items: center;
-  background: #2c3e50;
-  box-sizing: border-box;
-  color: #ecf0f1;
-  display: flex;
-  justify-content: space-between;
-  height: 4rem;
-  padding: 1rem;
-  width: 100%;
-  span {
-    margin-right: 1rem;
-  }
-`;
-
-const Button = styled.button`
-  color: white;
-  background: #2ecc71;
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 2px solid #2ecc71;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: 300ms;
-  :hover {
-    background: #26aa5d;
-    border: 2px solid #26aa5d;
-  }
-`;
 class ExpenseForm extends Component {
   constructor() {
     super();
@@ -100,8 +70,8 @@ class ExpenseForm extends Component {
 }
 
 ExpenseForm.propTypes = {
-  addNewExpense: PropTypes.func,
-}.isRequired;
+  addNewExpense: propTypes.func,
+};
 
 const mapStateToProps = (state) => ({
   currencies: state.wallet.currencies,
