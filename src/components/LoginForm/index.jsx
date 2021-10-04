@@ -2,83 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
-import { userLogin } from "../actions";
-import styled, { keyframes } from "styled-components";
-import logoTrybe from "../trybe.jpeg";
-
-const AnimationUp = keyframes`
-  0% {
-      opacity: 0;
-      transform: translateY(50px);
-  }
-  100% {
-      opacity: 1;
-      transform: translateY(0);
-  }
-`;
-
-const Button = styled.button`
-  color: #2c3e50;
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 2px solid #2ecc71;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: 300ms;
-  :hover {
-    color: white;
-    background: #2ecc71;
-  }
-  :disabled {
-    border: none;
-    cursor: not-allowed;
-    background-color: #95a5a6;
-    color: #2c3e50;
-    :hover {
-      background-color: #95a5a6;
-      color: #2c3e50;
-    }
-  }
-`;
-
-const Form = styled.form`
-  animation: 1s ${AnimationUp} ease-in-out;
-  align-items: center;
-  box-sizing: border-box;
-  border: 2px solid #2ecc71;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  padding: 5rem 2rem;
-  width: 25rem;
-  height: 30rem;
-`;
-const Input = styled.input`
-  :focus {
-    border: none;
-    outline: 0;
-  }
-  box-sizing: border-box;
-  border: none;
-  border-bottom: 1px solid #2ecc71;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-`;
-
-const TitleContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  img {
-    width: 80px;
-    border-radius: 10px;
-  }
-`;
-
-const Title = styled.h2`
-  color: #2c3e50;
-`;
+import { userLogin } from "../../actions";
+import logoTrybe from "../../trybe.jpeg";
+import { Button, Form, Input, Title, TitleContainer } from "./style";
 
 class LoginForm extends Component {
   constructor() {
@@ -174,7 +100,7 @@ class LoginForm extends Component {
 
 LoginForm.propTypes = {
   getEmail: PropTypes.func,
-}.isRequired;
+};
 
 const mapDispatchToProps = (dispatch) => ({
   getEmail: (email) => dispatch(userLogin(email)),
