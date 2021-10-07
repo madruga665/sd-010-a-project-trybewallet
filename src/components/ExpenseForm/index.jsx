@@ -4,7 +4,7 @@ import propTypes from 'prop-types';
 import Value from '../ExpenseFormComponents/Value';
 import Description from '../Description';
 import Currency from '../Currency';
-import PaymentMethods from '../ExpenseFormComponents/PaymentMethods';
+import PaymentMethods from '../PaymentMethods';
 import Tag from '../ExpenseFormComponents/Tag';
 import { addExpense } from '../../actions';
 import { Button, Form } from './style';

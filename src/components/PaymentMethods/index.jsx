@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-const Select = styled.select`
-  border-radius: 5px;
-  border: none;
-  padding: 0.2rem;
-  margin-left: 0.5rem;
-`;
+import propTypes from 'prop-types';
+import { Select } from './style';
 
 export default class PaymentMethods extends Component {
   render() {
@@ -32,6 +25,6 @@ export default class PaymentMethods extends Component {
 }
 
 PaymentMethods.propTypes = {
-  value: PropTypes.string,
-  handleChange: PropTypes.func,
-}.isRequired;
+  value: propTypes.string,
+  handleChange: propTypes.func,
+};
