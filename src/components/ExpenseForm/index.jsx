@@ -5,7 +5,7 @@ import Value from '../ExpenseFormComponents/Value';
 import Description from '../Description';
 import Currency from '../Currency';
 import PaymentMethods from '../PaymentMethods';
-import Tag from '../ExpenseFormComponents/Tag';
+import Tag from '../Tag';
 import { addExpense } from '../../actions';
 import { Button, Form } from './style';
 import getAllCurrency from '../../service/awesomeapi';

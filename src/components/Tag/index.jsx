@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-const Select = styled.select`
-  border-radius: 5px;
-  border: none;
-  padding: 0.2rem;
-  margin-left: 0.5rem;
-`;
+import Select from './style';
 
 export default class Tag extends Component {
   render() {
@@ -29,6 +22,6 @@ export default class Tag extends Component {
 }
 
 Tag.propTypes = {
-  value: PropTypes.string,
-  handleChange: PropTypes.func,
-}.isRequired;
+  value: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+};
