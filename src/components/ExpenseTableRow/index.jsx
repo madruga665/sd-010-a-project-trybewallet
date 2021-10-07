@@ -1,16 +1,15 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { removeExpense } from "../../actions";
-import { BsTrash } from "react-icons/bs";
-import { FaEdit } from "react-icons/fa";
-import { Button } from "./style";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { BsTrash } from 'react-icons/bs';
+import { FaEdit } from 'react-icons/fa';
+import { removeExpense } from '../../actions';
+import { Button } from './style';
 
 class ExpenseTableRow extends Component {
   render() {
     const { expense, removeCurrentExpense } = this.props;
-    const { description, tag, method, value, exchangeRates, currency } =
-      expense;
+    const { description, tag, method, value, exchangeRates, currency } = expense;
     return (
       <tbody>
         <tr>
@@ -24,15 +23,15 @@ class ExpenseTableRow extends Component {
           <td>Real</td>
           <td>
             <Button>
-              <FaEdit size={20} />
+              <FaEdit size={ 20 } />
             </Button>
             <Button
               trash
               type="button"
               data-testid="delete-btn"
-              onClick={() => removeCurrentExpense(expense)}
+              onClick={ () => removeCurrentExpense(expense) }
             >
-              <BsTrash size={20} />
+              <BsTrash size={ 20 } />
             </Button>
           </td>
         </tr>
