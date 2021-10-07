@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Value from '../ExpenseFormComponents/Value';
+import Value from '../Value';
 import Description from '../Description';
 import Currency from '../Currency';
 import PaymentMethods from '../PaymentMethods';
