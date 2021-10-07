@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import Value from '../ExpenseFormComponents/Value';
 import Description from '../ExpenseFormComponents/Description';
-import Currency from '../ExpenseFormComponents/Currency';
+import Currency from '../Currency';
 import PaymentMethods from '../ExpenseFormComponents/PaymentMethods';
 import Tag from '../ExpenseFormComponents/Tag';
 import { addExpense } from '../../actions';
