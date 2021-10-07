@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import logoTrybe from "../../trybe.jpeg";
-import { Link } from "react-router-dom";
-import { HeaderStyled, LogoContainer, Title } from "./style";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import logoTrybe from '../../trybe.jpeg';
+import { HeaderStyled, LogoContainer, Title } from './style';
 
 class Header extends Component {
   constructor() {
@@ -15,13 +15,12 @@ class Header extends Component {
     const { expenses } = this.props;
     return expenses
       .reduce(
-        (accumulator, currentValue) =>
-          accumulator +
-          Number(
-            currentValue.value *
-              currentValue.exchangeRates[currentValue.currency].ask
+        (accumulator, currentValue) => accumulator
+          + Number(
+            currentValue.value
+              * currentValue.exchangeRates[currentValue.currency].ask,
           ),
-        0
+        0,
       ).toFixed(2);
   }
 
@@ -30,10 +29,10 @@ class Header extends Component {
     return (
       <HeaderStyled>
         <Link to="/">
-        <LogoContainer>
-          <img src={logoTrybe} alt="logo da trybe" />
-          <Title>TRYBE WALLET</Title>
-        </LogoContainer>
+          <LogoContainer>
+            <img src={ logoTrybe } alt="logo da trybe" />
+            <Title>TRYBE WALLET</Title>
+          </LogoContainer>
         </Link>
         <div>
           <span data-testid="email-field">
@@ -42,7 +41,9 @@ class Header extends Component {
           </span>
           <span data-testid="total-field">
             <strong>Despesa Total: </strong>
-            R$ {this.totalExpenses()}
+            R$
+            {' '}
+            {this.totalExpenses()}
             BRL
           </span>
         </div>
@@ -52,7 +53,8 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  email: PropTypes.string,
+  email: PropTypes.string.isRequired,
+  expenses: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 const mapStateToProps = (state) => ({

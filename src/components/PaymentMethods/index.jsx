@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
-import { Select } from './style';
+import Select from './style';
 
 export default class PaymentMethods extends Component {
   render() {
@@ -25,6 +25,6 @@ export default class PaymentMethods extends Component {
 }
 
 PaymentMethods.propTypes = {
-  value: propTypes.string,
-  handleChange: propTypes.func,
+  value: propTypes.string.isRequired,
+  handleChange: propTypes.func.isRequired,
 };

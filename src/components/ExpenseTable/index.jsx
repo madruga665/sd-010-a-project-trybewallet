@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import ExpenseTableRow from "../ExpenseTableRow";
-import { Table } from "./style";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import ExpenseTableRow from '../ExpenseTableRow';
+import Table from './style';
 
 class ExpenseTable extends Component {
   render() {
@@ -23,7 +23,7 @@ class ExpenseTable extends Component {
           </tr>
         </thead>
         {expenses.map((expense) => (
-          <ExpenseTableRow key={expense.id} expense={expense} />
+          <ExpenseTableRow key={ expense.id } expense={ expense } />
         ))}
       </Table>
     );
@@ -31,7 +31,7 @@ class ExpenseTable extends Component {
 }
 
 ExpenseTable.propTypes = {
-  expenses: PropTypes.array,
+  expenses: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 const mapStateToProps = (state) => ({

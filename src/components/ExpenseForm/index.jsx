@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Value from '../ExpenseFormComponents/Value';
 import Description from '../Description';
 import Currency from '../Currency';
@@ -8,7 +8,7 @@ import PaymentMethods from '../PaymentMethods';
 import Tag from '../ExpenseFormComponents/Tag';
 import { addExpense } from '../../actions';
 import { Button, Form } from './style';
-import { getAllCurrency } from '../../service/awesomeapi'
+import getAllCurrency from '../../service/awesomeapi';
 
 class ExpenseForm extends Component {
   constructor() {
@@ -70,7 +70,8 @@ class ExpenseForm extends Component {
 }
 
 ExpenseForm.propTypes = {
-  addNewExpense: propTypes.func,
+  addNewExpense: PropTypes.func.isRequired,
+  expenses: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 const mapStateToProps = (state) => ({

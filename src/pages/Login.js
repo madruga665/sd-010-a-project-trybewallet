@@ -7,7 +7,7 @@ const Main = styled.main`
   display: flex;
   height: 100vh;
   justify-content: center;
-`
+`;
 
 class Login extends React.Component {
   render() {

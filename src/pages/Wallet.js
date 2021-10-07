@@ -1,7 +1,7 @@
 import React from 'react';
+import styled, { keyframes } from 'styled-components';
 import ExpenseForm from '../components/ExpenseForm';
 import ExpenseTable from '../components/ExpenseTable';
-import styled, { keyframes } from "styled-components";
 import Header from '../components/Header';
 
 const AnimationUp = keyframes`
@@ -15,7 +15,7 @@ const AnimationUp = keyframes`
 
 const Main = styled.main`
   animation: 1s ${AnimationUp} ease-in-out;
-`
+`;
 
 class Wallet extends React.Component {
   render() {

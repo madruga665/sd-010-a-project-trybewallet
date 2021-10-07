@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const Table = styled.table`
+const Table = styled.table`
   box-sizing: border-box;
   background: #34495e;
   border: none;
@@ -8,3 +8,5 @@ export const Table = styled.table`
   text-align: center;
   width: 100%;
 `;
+
+export default Table;

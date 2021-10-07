@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { Redirect } from "react-router-dom";
-import { userLogin } from "../../actions";
-import logoTrybe from "../../trybe.jpeg";
-import { Button, Form, Input, Title, TitleContainer } from "./style";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
+import { userLogin } from '../../actions';
+import logoTrybe from '../../trybe.jpeg';
+import { Button, Form, Input, Title, TitleContainer } from './style';
 
 class LoginForm extends Component {
   constructor() {
     super();
     this.state = {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
       buttonDisable: true,
       redirect: false,
     };
@@ -39,10 +39,9 @@ class LoginForm extends Component {
       target: { value, name },
     } = event;
     this.setState({ [name]: value });
-    const verifications =
-      this.emailVerification() && this.passwordVerification()
-        ? this.setState({ buttonDisable: false })
-        : this.setState({ buttonDisable: true });
+    const verifications = this.emailVerification() && this.passwordVerification()
+      ? this.setState({ buttonDisable: false })
+      : this.setState({ buttonDisable: true });
     return verifications;
   }
 
@@ -61,7 +60,7 @@ class LoginForm extends Component {
     return (
       <Form>
         <TitleContainer>
-          <img src={logoTrybe} alt="logo da trybe" />
+          <img src={ logoTrybe } alt="logo da trybe" />
           <Title>TRYBE WALLET</Title>
         </TitleContainer>
         <label htmlFor="email">
@@ -69,8 +68,8 @@ class LoginForm extends Component {
             type="email"
             id="email"
             name="email"
-            value={email}
-            onChange={this.handleChange}
+            value={ email }
+            onChange={ this.handleChange }
             data-testid="email-input"
             placeholder="Digite seu email"
           />
@@ -80,16 +79,16 @@ class LoginForm extends Component {
             type="password"
             id="password"
             name="password"
-            value={password}
-            onChange={this.handleChange}
+            value={ password }
+            onChange={ this.handleChange }
             data-testid="password-input"
             placeholder="Digite sua senha"
           />
         </label>
         <Button
           type="submit"
-          disabled={buttonDisable}
-          onClick={this.handleSubmit}
+          disabled={ buttonDisable }
+          onClick={ this.handleSubmit }
         >
           Entrar
         </Button>
@@ -99,7 +98,7 @@ class LoginForm extends Component {
 }
 
 LoginForm.propTypes = {
-  getEmail: PropTypes.func,
+  getEmail: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = (dispatch) => ({

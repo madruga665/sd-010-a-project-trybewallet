@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchCurrency } from '../../actions';
-import { Select } from './style';
+import Select from './style';
 
 class Currency extends Component {
   componentDidMount() {

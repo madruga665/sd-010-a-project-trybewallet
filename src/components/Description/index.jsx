@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import propTypes from 'prop-types';
-import { Input } from './style';
+import PropTypes from 'prop-types';
+import Input from './style';
 
 export default class Description extends Component {
   render() {
@@ -21,6 +21,6 @@ export default class Description extends Component {
 }
 
 Description.propTypes = {
-  value: propTypes.string,
-  handleChange: propTypes.func,
+  value: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };
