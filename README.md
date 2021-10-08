@@ -34,7 +34,7 @@ cd trybe-projeto-trybewallet
 npm install
 ```
 
-### 3. Rode a aplicação utilizando o comando:
+### 4. Rode a aplicação utilizando o comando:
 
 ```
 npm start
