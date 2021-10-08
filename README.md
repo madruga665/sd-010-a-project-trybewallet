@@ -1,8 +1,18 @@
 <img src="https://ik.imagekit.io/lltmkbsdtye/CAPA_LINKEDIN_PERFIL_PESSOAL03__1__7hO4TKpg5.png">
 
-# 🚀️ Projeto realizado no final do bloco 17 do curso.
+# 💼️ TrybeWallet 
 
-[Link para acessar a aplicação](https://madruga665.github.io/trybe-projeto-trybewallet/)
+## 🚀️ Projeto realizado no final do bloco 17 do curso.
+Neste projeto foi desenvolvido uma carteira de controle de gastos com conversor de moedas, ao utilizar essa aplicação um usuário deverá ser capaz de:
+
+  - Adicionar, remover e editar um gasto;
+  - Visualizar uma tabelas com seus gastos;
+  - Visualizar o total de gastos convertidos para uma moeda de escolha;
+
+  ---
+## 🌐️ Deploy da aplicação no Github-pages
+
+[TrybeWallet by Luciano Amâncio (madruga665)](https://madruga665.github.io/trybe-projeto-trybewallet/)
 
 *Nota: para acessar a aplicação digite um email valido ex: meuemail@gmail.com e uma senha qualquer com mais de 6 digitos.*
 
@@ -15,7 +25,13 @@
 git clone https://github.com/madruga665/trybe-projeto-trybewallet.git
 ```
 
-### 2. Instale as dependências:
+### 2. Entre na pasta do projeto:
+
+```
+cd trybe-projeto-trybewallet
+```
+
+### 3. Instale as dependências:
 
 ```
 npm install
@@ -48,7 +64,7 @@ npm start
 
 Crie uma página para que a pessoa usuária se identifique, com email e senha. Esta página deve ser a página inicial de seu aplicativo.
 
-  ![image](login.gif)
+  ![image](/images/login.gif)
 
 #### 1. Crie uma página inicial de login com os seguintes campos e características:
 
@@ -98,7 +114,7 @@ Crie uma página para que a pessoa usuária se identifique, com email e senha. E
 
 Crie uma página para gerenciar a carteira de gastos em diversas moedas, e que traga a despesa total em uma moeda só. Esta página deve ser renderizada por um componente chamado ***Wallet***.
 
-  ![image](carteira.gif)
+  ![image](/images/carteira.gif)
 ---
 ### Configurando sua página
 
@@ -342,7 +358,7 @@ O que será testado:
 #### 10. Crie um botão para deletar uma despesa da tabela contendo as seguintes características:
 
 
-   ![image](btnExcluir.gif)
+   ![image](/images/btnExcluir.gif)
 
   * O botão deve estar na linha da tabela e deve possuir `data-testid="delete-btn"`.
 
@@ -358,7 +374,7 @@ O que será testado:
 
 #### 11. Crie um botão para editar uma despesa da tabela contendo as seguintes características:
 
-   ![image](btnEditar.gif)
+   ![image](/images/btnEditar.gif)
 
   * O botão deve estar dentro da linha da tabela e deve possuir `data-testid="edit-btn"`
 
