@@ -9,14 +9,11 @@ Neste projeto foi desenvolvido uma carteira de controle de gastos com conversor 
   - Visualizar uma tabelas com seus gastos;
   - Visualizar o total de gastos convertidos para uma moeda de escolha;
 
-  ---
 ## 🌐️ Deploy da aplicação no Github-pages
 
 [TrybeWallet by Luciano Amâncio (madruga665)](https://madruga665.github.io/trybe-projeto-trybewallet/)
 
 *Nota: para acessar a aplicação digite um email valido ex: meuemail@gmail.com e uma senha qualquer com mais de 6 digitos.*
-
----
 
 ## 🏃‍♀️ Como rodar o projeto na sua maquina?
 
@@ -55,8 +52,6 @@ npm start
   * Conectar Redux aos componentes React
 
   * Criar actions assíncronas na sua aplicação React que faz uso de Redux.
-
----
 
 ## Lista de requisitos
 
