@@ -27,7 +27,7 @@ class Header extends Component {
   render() {
     const { email } = this.props;
     return (
-      <HeaderStyled>
+      <HeaderStyled data-testid="header-currency-field">
         <Link to="/">
           <LogoContainer>
             <img src={ logoTrybe } alt="logo da trybe" />
